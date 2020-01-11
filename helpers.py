@@ -61,6 +61,20 @@ def plot_example_returns(input_file, number_stocks):
         data_use.plot(ax=ax, title='returns')
         ax.legend()
         plt.show()
+        
+def get_data_subsets(df,dur=30):
+    df = np.array(df)
+    leng = df.shape[0]
+    print (df.shape[0])
+    x=[]
+    y=[]
+    for i in range(leng):
+        if dur+i>=leng:
+            print (i)
+            break
+        x.append(df[i:dur+i,:])
+        y.append(df[dur+i,:])
+    return np.array(x),np.array(y)
 
 def vb(data_dict, stan_model, init='random', iter=10000, tries=5, num=0):
     """
