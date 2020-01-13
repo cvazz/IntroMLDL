@@ -28,7 +28,7 @@ def data_loader(begin, finish, output_file):
     df_r.iloc[1:, :]
     df_r.to_csv(output_file)
 
-def delete_nans_graph(input_file, output_file):
+def delete_nans(input_file, output_file):
     dirty_data = pd.read_csv(input_file, index_col='Date', parse_dates=['Date']).fillna(0)
     data = pd.DataFrame(dirty_data)
     data.to_csv(output_file)
