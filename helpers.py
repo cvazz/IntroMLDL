@@ -62,7 +62,7 @@ def plot_example_returns(input_file, number_stocks):
         ax.legend()
         plt.show()
         
-def get_data_subsets(df,dur=30):
+def get_data_subsets(df,dur):
     df = np.array(df)
     leng = df.shape[0]
     print (df.shape[0])
